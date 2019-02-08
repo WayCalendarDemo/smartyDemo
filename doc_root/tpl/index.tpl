@@ -1,8 +1,7 @@
-<html>
-  <head>
-    <title>Smarty</title>
-  </head>
-  <body>
+{include file="../elements/head.tpl"}
+
+<h1>{$pagetitle}</h1>
+
     Hello, {$name}!
-  </body>
-</html>
+
+{include file="../elements/footer.tpl"}
