@@ -2,7 +2,10 @@
 
 <h1>{$pagetitle}</h1>
 
-    Hello, {$name|capitalize}!
-    The date is {$smarty.now|date_Format: "%b %e, %Y"}
 
+<p>Use 'variable modifiers' to alter the output of assigned variables from within the template.
+You can use modifiers from Smarty or you can make your own using the plugin architecture.
+Drop your new modifers into the plugin directory</p>
+
+<p>Hello, {$name|capitalize}!<br>The date is {$smarty.now|date_Format: "%b %e, %Y"}</p>
 {include file="../../elements/footer.tpl"}

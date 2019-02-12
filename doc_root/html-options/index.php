@@ -12,7 +12,7 @@ $smarty->setConfigDir('../lib/smarty/configs');
 $smarty->assign('name', 'ned');
 $smarty->assign('pagetitle', 'html-options');
 
-$smarty->assign('id', array(1,2,3,4,5));
+$smarty->assign('id', array(1,2,3,4));
 $smarty->assign('names', array('Fee', 'Fi', 'Fo', 'Fum'));
 
 $smarty->display('html_options.tpl');
