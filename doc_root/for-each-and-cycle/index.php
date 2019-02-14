@@ -1,13 +1,14 @@
 <?php
-set_include_path( get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
+define('DOC_ROOT', $_SERVER['DOCUMENT_ROOT'] );
 
-require('lib/smarty/Smarty.class.php');
+require(DOC_ROOT . '/lib/smarty/Smarty.class.php');
 $smarty = new Smarty();
 
 $smarty->setTemplateDir('tpl');
-$smarty->setCompileDir('../lib/smarty/templates_c');
-$smarty->setCacheDir('../lib/smarty/smarty/cache');
-$smarty->setConfigDir('../lib/smarty/configs');
+$smarty->setCompileDir(DOC_ROOT . '/lib/smarty/templates_c');
+$smarty->setCacheDir(DOC_ROOT . '/lib/smarty/smarty/cache');
+$smarty->setConfigDir(DOC_ROOT . '/lib/smarty/configs');
+$smarty->assign('path', DOC_ROOT);
 
 $smarty->assign('pagetitle', 'Foreach and Cycle');
 

@@ -1,4 +1,4 @@
-{include file="../../elements/head.tpl"}
+{include file="{$path}/elements/head.tpl"}
 
 <h1>{$pagetitle}</h1>
 
@@ -8,4 +8,6 @@ You can use modifiers from Smarty or you can make your own using the plugin arch
 Drop your new modifers into the plugin directory</p>
 
 <p>Hello, {$name|capitalize}!<br>The date is {$smarty.now|date_Format: "%b %e, %Y"}</p>
-{include file="../../elements/footer.tpl"}
+
+
+{include file="{$path}/elements/footer.tpl"}

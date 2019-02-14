@@ -1,4 +1,4 @@
-{include file="../../elements/head.tpl"}
+{include file="{$path}/elements/head.tpl"}
 
 <h1>{block name=title}Inheritance{/block}</h1>
 
@@ -8,4 +8,4 @@
 
 <p>Think about changing the language using this method</p>
 
-{include file="../../elements/footer.tpl"}
+{include file="{$path}/elements/footer.tpl"}

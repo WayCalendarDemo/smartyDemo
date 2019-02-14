@@ -1,4 +1,4 @@
-{include file="../../elements/head.tpl"}
+{include file="{$path}/elements/head.tpl"}
 
 <h1>{$pagetitle}</h1>
 
@@ -9,4 +9,4 @@ generate the HTML output for it.</p>
   {html_options values=$id output=$names selected="1"}
 </select>
 
-{include file="../../elements/footer.tpl"}
+{include file="{$path}/elements/footer.tpl"}

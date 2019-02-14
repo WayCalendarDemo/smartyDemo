@@ -1,4 +1,4 @@
-{include file="../../elements/head.tpl"}
+{include file="{$path}/elements/head.tpl"}
 
 <h1>{$pagetitle}</h1>
 
@@ -27,4 +27,4 @@ You can use the strip function to remove extra white space. - Doesn't seem to be
   {/foreach}
 </table>
 
-{include file="../../elements/footer.tpl"}
+{include file="{$path}/elements/footer.tpl"}

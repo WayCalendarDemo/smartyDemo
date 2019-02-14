@@ -1,4 +1,4 @@
-{include file="../../elements/head.tpl"}
+{include file="{$path}/elements/head.tpl"}
 
 <h1>{$pagetitle}</h1>
 
@@ -11,5 +11,4 @@ You can also leave parts of the page dynamic just by marking them as nocache.</p
 
 
 
-
-{include file="../../elements/footer.tpl"}
+{include file="{$path}/elements/footer.tpl"}
