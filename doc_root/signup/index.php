@@ -1,7 +1,4 @@
 <?php
-set_include_path( get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
-
-
 
 /**
 
@@ -12,22 +9,45 @@ set_include_path( get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT'
 
 **/
 
+// define the doc root
+define('DOC_ROOT', $_SERVER['DOCUMENT_ROOT'] );
 // define the application directory
-define('SIGNUP_DIR', '../');
+define('SIGNUP_DIR', DOC_ROOT . '/signup/');
+// define smarty library directory
+define('SMARTY_DIR', DOC_ROOT . '/lib/smarty/');
+// include the setup script
+include(SIGNUP_DIR, '/lib/signup_setup.php');
+
+// create a signup object
+$signup = new Signup;
+
+// set the current action
+$_action = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'view';
+
+switch($_action) {
+  case 'signin':
+    //show sign in page
+
+  break;
+  default:
+    //show signup page
+
+  break;
+}
 
 
-require('lib/smarty/Smarty.class.php');
-$smarty = new Smarty();
+/**
 
+* This file is the application controller.
+* It handles all incoming browser requests and directs actions to take.
+* It will define our application directories, include the setup script, and
+* direct an action depending on the value from teh 
 
-
-$smarty->setTemplateDir('tpl');
-$smarty->setCompileDir('../lib/smarty/templates_c');
-$smarty->setCacheDir('../lib/smarty/smarty/cache');
-$smarty->setConfigDir('../lib/smarty/configs');
-
-$smarty->assign('name', 'ned');
-$smarty->assign('pagetitle', 'Login Page');
-$smarty->display('login.tpl');
+**/
 
 ?>
+
+
+
+
+<!-- https://www.smarty.net/sampleapp2 -->
