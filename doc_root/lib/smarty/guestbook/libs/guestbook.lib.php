@@ -20,31 +20,13 @@ class Guestbook {
   // error messages
   var $error = null;
 
-  /* set database settings here! */
-  // PDO database type
-  var $dbtype = 'mysql';
-  // PDO database name
-  var $dbname = 'GUESTBOOK';
-  // PDO database host
-  var $dbhost = 'localhost';
-  // PDO database username
-  var $dbuser = 'guestbook';
-  // PDO database password
-  var $dbpass = 'foobar';
-
-
-  /**
-  * class constructor
-  */
   function __construct() {
 
     // instantiate the pdo object
     try {
-      $dsn = "{$this->dbtype}:host={$this->dbhost};dbname={$this->dbname}";
-      $this->pdo =  new PDO($dsn,$this->dbuser,$this->dbpass);
+      $this->pdo = new PDO('mysql:host=localhost; dbname=GUESTBOOK;', 'root', 'root');
     } catch (PDOException $e) {
-      print "Error!: " . $e->getMessage();
-      die();
+      print $e->getMessage();
     }
 
     // instantiate the template object
@@ -57,6 +39,8 @@ class Guestbook {
 	* __construct() is the class constructor. It is executed each time we instantiate
 	* the guestbook object. It instantiates the PDO and Smarty objects as properties.
 	* We can then access them from within our object methods
+
+  * https://stackoverflow.com/questions/2583707/can-i-create-a-database-using-pdo-in-php
 
 	**/
 
