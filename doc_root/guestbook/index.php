@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 //define the doc root path
 define('DOC_ROOT', $_SERVER['DOCUMENT_ROOT'] );
 // define the application directory
-define('GUESTBOOK_DIR', DOC_ROOT . '/lib/smarty/guestbook/');
+define('GUESTBOOK_DIR', DOC_ROOT . '/guestbook/smarty/');
 //define smarty lib directory
 define('SMARTY_DIR', DOC_ROOT . '/lib/smarty/');
 //include the setup script

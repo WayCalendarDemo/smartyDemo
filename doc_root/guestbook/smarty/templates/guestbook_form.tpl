@@ -1,3 +1,4 @@
+{debug}
 <form action="{$SCRIPT_NAME}?action=submit" method="post">
   <table border="1">
     {if $error ne ""}
@@ -12,8 +13,7 @@
     <tr>
       <td>Name:</td>
       <td>
-        <input type="text" name="Name"
-          value="{$post.Name|escape}" size="40">
+        <input type="text" name="Name" value="{$post.Name|escape}" size="40">
       </td>
     </tr>
     <tr>
