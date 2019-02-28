@@ -54,7 +54,7 @@ switch($_action) {
 * The web browser will be accessing this script directly
 * This file acts as the application controller
 * It defines the application directories, include the setup script, and direct an
-* action depending on the action value from teh $_REQUEST super-global.
+* action depending on the action value from the $_REQUEST super-global.
 * There are three basic actions:
 * add -> when a user wants to add an entry to the guestbook
 * submit -> When a user submits an entry.

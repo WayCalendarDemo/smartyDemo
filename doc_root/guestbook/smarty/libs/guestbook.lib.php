@@ -51,10 +51,8 @@ class Guestbook {
   *
   * @param array $formvars the form variables
   */
-  function displayForm($formvars = array()) {
+  function displayForm() {
 
-    // assign the form vars
-    $this->tpl->assign('post',$formvars);
     // assign error message
     $this->tpl->assign('error', $this->error);
     $this->tpl->display('guestbook_form.tpl');
@@ -104,16 +102,19 @@ class Guestbook {
 
     // reset error message
     $this->error = null;
+    // set error as an array
+    $this->error = array();
 
-    // test if "Name" is empty
-    if(strlen($formvars['Name']) == 0) {
-      $this->error = 'name_empty';
-      return false;
-    }
-
-    // test if "Comment" is empty
-    if(strlen($formvars['Comment']) == 0) {
-      $this->error = 'comment_empty';
+    // test if "Name" or "Comment" is empty
+    if(strlen($formvars['Name']) == 0 || strlen($formvars['Comment']) == 0) {
+      // test if "Name" is empty
+      if(strlen($formvars['Name']) == 0) {
+        array_push($this->error, 'name_empty');
+      }
+      // test if "Comment" is empty
+      if(strlen($formvars['Comment']) == 0) {
+        array_push($this->error, 'comment_empty');
+      }
       return false;
     }
 
