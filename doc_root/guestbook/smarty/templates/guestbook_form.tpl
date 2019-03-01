@@ -3,7 +3,7 @@
     {if $error ne ""}
       <tr>
       <td bgcolor="yellow" colspan="2">
-      {if in_array("name_empty", $error)} You must supply a name.{/if}
+      {if in_array("name_empty", $error)} You must supply a name.{/if}<br>
       {if in_array("comment_empty", $error)} You must supply a comment.{/if}
       </td>
       </tr>
@@ -24,6 +24,7 @@
     </tr>
     <tr>
       <td colspan="2" align="center">
+        <a href="/guestbook/index.php?action=view"/>Cancel</a>
         <input type="submit" value="Submit">
       </td>
     </tr>
@@ -35,7 +36,5 @@
 guestbook_form.tpl is the template for adding an entry to the guestbook.
 If the form is being redisplayed due to a validation error, the form values are
 HTML-escaped so there are no HTML tag or quote character clashes (very important!)
-
-
 
 -->

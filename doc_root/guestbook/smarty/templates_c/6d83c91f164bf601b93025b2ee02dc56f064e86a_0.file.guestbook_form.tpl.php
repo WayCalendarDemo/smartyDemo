@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-02-28 05:43:46
+/* Smarty version 3.1.33, created on 2019-03-01 04:46:28
   from '/Users/wayland/smartyproject/doc_root/guestbook/smarty/templates/guestbook_form.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5c776702274fa2_88929128',
+  'unifunc' => 'content_5c78ab14b03637_78065194',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6d83c91f164bf601b93025b2ee02dc56f064e86a' => 
     array (
       0 => '/Users/wayland/smartyproject/doc_root/guestbook/smarty/templates/guestbook_form.tpl',
-      1 => 1551329020,
+      1 => 1551411986,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5c776702274fa2_88929128 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5c78ab14b03637_78065194 (Smarty_Internal_Template $_smarty_tpl) {
 ?><form action="<?php echo $_smarty_tpl->tpl_vars['SCRIPT_NAME']->value;?>
 ?action=submit" method="post">
   <table border="1">
     <?php if ($_smarty_tpl->tpl_vars['error']->value != '') {?>
       <tr>
       <td bgcolor="yellow" colspan="2">
-      <?php if (in_array("name_empty",$_smarty_tpl->tpl_vars['error']->value)) {?> You must supply a name.<?php }?>
+      <?php if (in_array("name_empty",$_smarty_tpl->tpl_vars['error']->value)) {?> You must supply a name.<?php }?><br>
       <?php if (in_array("comment_empty",$_smarty_tpl->tpl_vars['error']->value)) {?> You must supply a comment.<?php }?>
       </td>
       </tr>
@@ -50,6 +50,7 @@ function content_5c776702274fa2_88929128 (Smarty_Internal_Template $_smarty_tpl)
     </tr>
     <tr>
       <td colspan="2" align="center">
+        <a href="/guestbook/index.php?action=view"/>Cancel</a>
         <input type="submit" value="Submit">
       </td>
     </tr>
@@ -61,8 +62,6 @@ function content_5c776702274fa2_88929128 (Smarty_Internal_Template $_smarty_tpl)
 guestbook_form.tpl is the template for adding an entry to the guestbook.
 If the form is being redisplayed due to a validation error, the form values are
 HTML-escaped so there are no HTML tag or quote character clashes (very important!)
-
-
 
 -->
 <?php }
