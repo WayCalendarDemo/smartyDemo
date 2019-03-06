@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Project: Guestbook Sample Smarty Application
- * Author: Monte Ohrt <monte [AT] ohrt [DOT] com>
+ * Project: Guestbook Application
+ * Author: Wayland Harwood
  * File: guestbook.lib.php
  * Version: 1.1
  */
