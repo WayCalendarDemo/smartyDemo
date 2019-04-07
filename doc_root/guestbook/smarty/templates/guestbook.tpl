@@ -1,24 +1,39 @@
-<table border="0" width="300">
-  <tr>
-    <th colspan="2" bgcolor="#d1d1d1">
-      Guestbook Entries (<a href="{$SCRIPT_NAME}?action=add">add</a>)</th>
-  </tr>
-  {foreach from=$data item="entry"}
-    <tr bgcolor="{cycle values="#dedede,#eeeeee" advance=false}">
-      <td>{$entry.Name|escape}</td>
-    <td align="right">
-      {$entry.EntryDate|date_format:"%e %b, %Y %H:%M:%S"}</td>
-    </tr>
-    <tr>
-      <td colspan="2" bgcolor="{cycle values="#dedede,#eeeeee"}">
-        {$entry.Comment|escape}</td>
-    </tr>
+{include file= "{$smarty.server.DOCUMENT_ROOT}/elements/head.tpl"}
+<main>
+  <div class="main-visual">
+    <h1 class="heading">Wisdom</h1>
+    <h5 class="subheading">A wise man once said...</h5>
+  </div>
+  <hr class="site-line">
+  <div class="entry-gateway">
+    <ul class="link-list">
+      <li class="link"><a href="{$SCRIPT_NAME}?action=add">New Entry</a></li>
+    </ul>
+  </div>
+  <section class="content-wrap">
+    {foreach from=$data item="entry"}
+    <article class="item-container">
+      <h2 class="item-heading">{$entry.Title|escape}</h2>
+      <hr class="item-heading-divider">
+      <p class="item-content">{$entry.Comment|escape}</p>
+      <ul class="item-author">
+        <li class="author-name">{$entry.Name|escape} /</li>
+        <li class="item-date">{$entry.EntryDate|date_format:"%b %e, %Y"}</li>
+      </ul>
+    </article>
     {foreachelse}
-      <tr>
-        <td colspan="2">No records</td>
-      </tr>
-  {/foreach}
-</table>
+    <article class="item-container">
+      <h2 class="item-heading">No Records</h2>
+      <hr class="item-heading-divider">
+      <p class="item-content">No Records</p>
+      <ul class="item-author">
+        <li class="author-name">No Records /</li>
+        <li class="item-date">No Records</li>
+      </ul>
+    </article>
+    {/foreach}
+  </section>
+</main>
 
 <!--
 
@@ -32,3 +47,4 @@ The {cycle} function is used to cycle through background colours every two table
 rows.
 
  -->
+{include file= "{$smarty.server.DOCUMENT_ROOT}/elements/footer.tpl"}

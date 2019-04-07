@@ -78,6 +78,7 @@ class Guestbook {
 
     // trim off excess whitespace
     $formvars['Name'] = trim($formvars['Name']);
+    $formvars['Title'] = trim($formvars['Title']);
     $formvars['Comment'] = trim($formvars['Comment']);
 
   }
@@ -106,10 +107,14 @@ class Guestbook {
     $this->error = array();
 
     // test if "Name" or "Comment" is empty
-    if(strlen($formvars['Name']) == 0 || strlen($formvars['Comment']) == 0) {
+    if(strlen($formvars['Name']) == 0 || strlen($formvars['Comment']) == 0 || strlen($formvars['Title']) == 0)  {
       // test if "Name" is empty
       if(strlen($formvars['Name']) == 0) {
         array_push($this->error, 'name_empty');
+      }
+      // test if "Name" is empty
+      if(strlen($formvars['Title']) == 0) {
+        array_push($this->error, 'title_empty');
       }
       // test if "Comment" is empty
       if(strlen($formvars['Comment']) == 0) {
@@ -140,8 +145,8 @@ class Guestbook {
   */
    function addEntry($formvars) {
     try {
-      $rh = $this->pdo->prepare("insert into GUESTBOOK values(0,?,NOW(),?)");
-      $rh->execute(array($formvars['Name'],$formvars['Comment']));
+      $rh = $this->pdo->prepare("insert into GUESTBOOK values(0,?,NOW(),?,?)");
+      $rh->execute(array($formvars['Name'],$formvars['Comment'],$formvars['Title']));
     } catch (PDOException $e) {
       print "Error!: " . $e->getMessage();
       return false;
@@ -162,6 +167,7 @@ class Guestbook {
   * get the guestbook entries
   */
   function getEntries() {
+
     try {
       foreach($this->pdo->query(
         "select * from GUESTBOOK order by EntryDate DESC") as $row)
